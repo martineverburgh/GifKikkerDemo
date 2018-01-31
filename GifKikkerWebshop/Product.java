@@ -9,6 +9,10 @@ public class Product {
         description = decr;
     }
     
+    public String getDescription() {
+        return description;
+    }
+    
     public void setPackaging(Packaging pack) {
         packaging = pack;
     }
