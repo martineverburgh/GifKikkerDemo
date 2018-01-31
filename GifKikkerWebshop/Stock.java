@@ -15,7 +15,10 @@ public class Stock {
     public void printStockList() {
         for (Product product : stockList.keySet()) {
             print(product.getDescription());
-            print("Aantal op voorraad: " + stockList.get(product) + "\n");
+            print("----------------------");
+            print("Prijs: €" + product.getPrice());
+            print("Aantal op voorraad: " + stockList.get(product));
+            print("Alcoholpercentage: " + product.beer.getAlcoholPercentage() + "% \n");
         }
     }
     

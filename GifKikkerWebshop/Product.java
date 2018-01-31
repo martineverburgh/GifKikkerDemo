@@ -3,7 +3,8 @@ public class Product {
     private String description;
     private Packaging packaging;
     private double volume;
-    private Beer beer;
+    public Beer beer;
+    private double price;
     
     public Product(String decr) {
         description = decr;
@@ -23,5 +24,13 @@ public class Product {
     
     public void setBeer(Beer beer) {
         this.beer = beer;
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+    
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
