@@ -4,7 +4,8 @@ public class Product {
     private Packaging packaging;
     private double volume;
     public Beer beer;
-    private double price;
+    private double costPrice;
+    private double sellPrice;
     
     public Product(String decr) {
         description = decr;
@@ -26,11 +27,11 @@ public class Product {
         this.beer = beer;
     }
     
-    public double getPrice() {
-        return price;
+    public double getSellPrice() {
+        return sellPrice;
     }
     
-    public void setPrice(double price) {
-        this.price = price;
+    public void setSellPrice(double sellPrice) {
+        this.sellPrice = sellPrice;
     }
 }
