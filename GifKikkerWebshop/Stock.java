@@ -35,7 +35,7 @@ public class Stock {
         if (currentStock - amount >= 0) {
             currentStock -= amount;
             stockList.replace(product, currentStock);
-            print("Product(s) sold. \nStock changed from " + 
+            print(product.getDescription() + " sold. \nStock changed from " + 
                 (currentStock + amount) + " to " + currentStock);
         }
         else {

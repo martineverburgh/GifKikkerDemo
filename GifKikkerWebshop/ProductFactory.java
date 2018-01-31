@@ -71,6 +71,10 @@ public class ProductFactory {
         }
     }
 
+    public void showProductsInShoppingCart() {
+        shoppingCart.showProductsInCart();
+    }
+    
     public void finishOrder(){
         shoppingCart.productsSold();
         System.out.println("Thank you for your order.");
