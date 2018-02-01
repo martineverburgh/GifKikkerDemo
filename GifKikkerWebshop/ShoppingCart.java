@@ -13,7 +13,7 @@ public class ShoppingCart {
     public void addToCart(Product product, int amount) {
         productsInCart.put(product, amount);
         System.out.println(amount + " time(s) " + product.getDescription() + 
-        " is added to your Shopping Cart.");
+            " is added to your Shopping Cart.");
     }
 
     public void showProductsInCart(){
@@ -27,9 +27,40 @@ public class ShoppingCart {
         System.out.println("The total price is €" + totalPrice);
     }
 
+    public void changeQuantityInCart(String productDescription, int newAmount) {
+        Product product = searchProduct(productDescription);
+        if (product != null) {
+            productsInCart.replace(product, newAmount);  
+            System.out.println("Your changes have been made.\n");
+            showProductsInCart();
+        }
+    }
+
+    public void removeProductFromCart(String productDescription){
+        Product product = searchProduct(productDescription);
+        if (product != null) {
+            productsInCart.remove(product);
+            System.out.println("The product has been removed from your Shopping Cart. \n");
+            showProductsInCart();
+        }
+    }
+
     public void productsSold(){
         for (Product product : productsInCart.keySet()) {
             stock.removeFromStock(product, productsInCart.get(product));
         }
+    }
+
+    public Product searchProduct(String productDescription) {
+        Product returnProduct = null;
+        for (Product product : productsInCart.keySet()) {
+            if (product.getDescription().equals(productDescription)) {
+                returnProduct = product;
+            }
+        }
+        if (returnProduct == null) {
+            System.out.println("No products found that match your search :(");
+        }
+        return returnProduct;
     }
 }

@@ -75,6 +75,14 @@ public class ProductFactory {
         shoppingCart.showProductsInCart();
     }
     
+    public void changeQuantityInCart(String productDescription, int newAmount) {
+        shoppingCart.changeQuantityInCart(productDescription, newAmount);
+    }
+    
+    public void removeProductFromCart(String productDescription) {
+        shoppingCart.removeProductFromCart(productDescription);
+    }
+    
     public void finishOrder(){
         shoppingCart.productsSold();
         System.out.println("Thank you for your order.");
